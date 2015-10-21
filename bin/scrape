@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require 'myscrape'
+require 'json'
+
+url = ARGV.first
+root = Myscrape::Scraper.new(url)
+
+pages = root.subscrape
+
+jj pages.unshift(root.summary)
